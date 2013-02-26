@@ -16,6 +16,16 @@ java -jar "convertBioinformaticFormats.jar"
 To distribute this project, zip up the dist folder (including the lib folder)
 and distribute the ZIP file.
 
+
+Usage: jar -jar <option> <params[]>
+<option>
+1 - convert from MAF to MAF_tab format
+2 - convert from MAF_tab to Gbrowse_Syn format
+3 - convert from Blast to Gbrowse_Syn format
+4 - convert from MAF to Clustalw format
+5 - convert from MAF to GBrowse_Syn format
+
+
 Notes:
 
 * If two JAR files on the project classpath have the same name, only the first
