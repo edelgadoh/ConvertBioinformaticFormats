@@ -21,15 +21,16 @@ public class ConvertBioinformaticFormats {
                     ConvertMAF_MAF_TABS gp = new ConvertMAF_MAF_TABS();
                     gp.generateNewFormat(args[1]);
                 } else {
-                    System.out.println("Usage: jar -jar 1 <input_file_maf_format> > output_file_tabs");
+                    System.out.println("Usage: java -jar 1 <input_file_maf_format> > output_file_tabs");
+                    System.out.println("Example: java -jar 1 file.maf > file.maf_tab");
                 }
             } else if(args[0].equals("2")){
                 if(args.length == 4){
                     ConvertMAF_TABStoGBROWSE_SYN gp = new ConvertMAF_TABStoGBROWSE_SYN();
                     gp.generateNewFormat(args[1],args[2],args[3]);
                 } else {
-                    System.out.println("Usage: jar -jar 2 <query_1> <query_2> <input_file_maf_tabs> > output_file");
-                    System.out.println("Example: jar -jar 2 <cane> <sorghum> ../fileMAFTabs > ../fileImportGBrowse_Syn");
+                    System.out.println("Usage: java -jar 2 <query_1> <query_2> <input_file_maf_tabs> > output_file");
+                    System.out.println("Example: java -jar 2 cane sorghum file.maf_tab > file.gbrowse_syn");
                 }
             } else if(args[0].equals("3")){
                 
@@ -48,8 +49,8 @@ public class ConvertBioinformaticFormats {
                     i.parserFormatBLASTtoGBROWSE_SYN(query_db,subject_db,inputFile,outputFile);
 
                 } else {
-                    System.out.println("Usage: jar -jar 3 <query_database> <subject_database> <input file> <output file>");
-                    System.out.println("Example: java -jar 3 sorghum cane /home/user/file_format_blast_tabs /home/user/file_format_gbrowse_syn_tabs");
+                    System.out.println("Usage: java -jar 3 <query_database> <subject_database> <input file> <output file>");
+                    System.out.println("Example: java -jar 3 sorghum cane file.blast_tabs file.gbrowse_syn");
                 }
                 
             } else if(args[0].equals("4")){
@@ -58,20 +59,31 @@ public class ConvertBioinformaticFormats {
                     ConvertMAF_CLUSTALW gp = new ConvertMAF_CLUSTALW();
                     gp.generateNewFormat(args[1],args[2]);
                 } else {
-                    System.out.println("Usage: jar -jar 4 <input file> <output file>.");
+                    System.out.println("Usage: java -jar 4 <input_file_maf> <output_file>");
+                    System.out.println("Usage: java -jar 4 file.maf file.clustalw");
                 }
                 
             } else if(args[0].equals("5")){
                 
-                if(args.length == 3){
+                if(args.length == 5){
                     ConvertMAF_GBrowseSyn gp = new ConvertMAF_GBrowseSyn();
-                    gp.generateNewFormat(args[1],args[2]);
+                    gp.generateNewFormat(args[1],args[2],args[3],args[4]);
                 } else {
-                    System.out.println("Usage: jar -jar 5 <input file> <output file>.");
+                    System.out.println("Usage: java -jar 5 <query_1> <query_2> <input_file_maf> <output_file>");
+                    System.out.println("Example: java -jar 5 cane sorghum file.maf file.gbrowse_syn");
+                    
                 }
                 
             } else {
-                System.out.println("<option> is not valid");
+                System.out.println("<option> is not valid!");
+                System.out.println("");
+                System.out.println("Usage: java -jar <option> <params[]>");
+                System.out.println("<option>");
+                System.out.println("1 - convert from MAF to MAF_tab format");
+                System.out.println("2 - convert from MAF_tab to Gbrowse_Syn format");
+                System.out.println("3 - convert from Blast to Gbrowse_Syn format");
+                System.out.println("4 - convert from MAF to Clustalw format");
+                System.out.println("5 - convert from MAF to GBrowse_Syn format");
             }
             
             

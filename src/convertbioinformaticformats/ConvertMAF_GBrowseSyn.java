@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  */
 public class ConvertMAF_GBrowseSyn {
 
-    public void generateNewFormat(String inputFileName, String outputFileName){
+    public void generateNewFormat(String query1, String query2, String inputFileName, String outputFileName){
         BufferedReader readbuffer = null;
         String strRead = "";
         FileWriter arquivo;
@@ -109,7 +109,7 @@ public class ConvertMAF_GBrowseSyn {
                         rowsReaded++;
                         
                         if(rowsReaded == 1){
-                            src1 = "cane";
+                            src1 = query1;
                             ref1 = splitarray[1];
                             start1 = Integer.parseInt(splitarray[2]);
                             lenRef1 = Integer.parseInt(splitarray[3]);
@@ -117,7 +117,7 @@ public class ConvertMAF_GBrowseSyn {
                             strand1 = splitarray[4];
                             seq1 = splitarray[6];
                         } else if(rowsReaded == 2){
-                            src2 = "sorghum";
+                            src2 = query2;
                             ref2 = splitarray[1];
                             start2 = Integer.parseInt(splitarray[2]);
                             lenRef2 = Integer.parseInt(splitarray[3]);
