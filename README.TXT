@@ -25,18 +25,25 @@ Usage: jar -jar <option> <params[]>
 4 - convert from MAF to Clustalw format
 5 - convert from MAF to GBrowse_Syn format
 
+Option 1:
+Usage: java -jar 1 <input_file_maf_format> > output_file_tabs
+Example: java -jar 1 file.maf > file.maf_tab
 
-Notes:
+Option 2:
+Usage: java -jar 2 <query_1> <query_2> <input_file_maf_tabs> > output_file
+Example: java -jar 2 cane sorghum file.maf_tab > file.gbrowse_syn
 
-* If two JAR files on the project classpath have the same name, only the first
-JAR file is copied to the lib folder.
-* Only JAR files are copied to the lib folder.
-If the classpath contains other types of files or folders, these files (folders)
-are not copied.
-* If a library on the projects classpath also has a Class-Path element
-specified in the manifest,the content of the Class-Path element has to be on
-the projects runtime path.
-* To set a main class in a standard Java project, right-click the project node
-in the Projects window and choose Properties. Then click Run and enter the
-class name in the Main Class field. Alternatively, you can manually type the
-class name in the manifest Main-Class element.
+Option 3:
+Usage: java -jar 3 <query_database> <subject_database> <input file> <output file>
+Example: java -jar 3 sorghum cane file.blast_tabs file.gbrowse_syn
+
+Option 4:
+Usage: java -jar 4 <input_file_maf> <output_file>
+Usage: java -jar 4 file.maf file.clustalw
+
+Option 5:
+Usage: java -jar 5 <query_1> <query_2> <input_file_maf> <output_file>
+Example: java -jar 5 cane sorghum file.maf file.gbrowse_syn
+
+
+If you need more details about this script, please contact me at edychrist@gmail.com
