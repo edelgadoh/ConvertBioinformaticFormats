@@ -89,7 +89,7 @@ public class ConvertBioinformaticFormats {
             
             
         } else {
-            System.out.println("Usage: jar -jar <option> <params[]>");
+            System.out.println("Usage: java -jar <option> <params[]>");
             System.out.println("<option>");
             System.out.println("1 - convert from MAF to MAF_tab format");
             System.out.println("2 - convert from MAF_tab to Gbrowse_Syn format");

@@ -17,7 +17,7 @@ To distribute this project, zip up the dist folder (including the lib folder)
 and distribute the ZIP file.
 
 
-Usage: jar -jar <option> <params[]>
+Usage: java -jar <option> <params[]>
 <option>
 1 - convert from MAF to MAF_tab format
 2 - convert from MAF_tab to Gbrowse_Syn format
